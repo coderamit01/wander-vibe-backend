@@ -1,20 +1,33 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
+    // File Layout
+    "rootDir": ".",
     "outDir": "./dist",
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
+
+    // Environment Settings
+    "module": "ESNext",
+    "target": "ES2023",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "moduleResolution": "bundler",
+
+    // Other Outputs
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
     "strict": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "ignoreDeprecations": "5.0",
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*", "./generated/**/*"],
   "exclude": ["node_modules", "dist"]
 }
